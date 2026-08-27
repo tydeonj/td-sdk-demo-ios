@@ -1,0 +1,9 @@
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+.DS_Store
+Pods/
+XCFrameworks/
+ThirdParty/
+*.xcworkspace/xcuserdata/

@@ -1,0 +1,407 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		650A7C548F543500DCB1A5DB /* Pods_TDAdsSDKDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD1269E7E520253F1F3C440 /* Pods_TDAdsSDKDemo.framework */; };
+		A10000000000000000000001 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000001 /* AppDelegate.m */; };
+		A10000000000000000000002 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000002 /* MainViewController.m */; };
+		A10000000000000000000004 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000004 /* main.m */; };
+		A10000000000000000000020 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B10000000000000000000020 /* UIKit.framework */; };
+		A10000000000000000000021 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B10000000000000000000021 /* Foundation.framework */; };
+		A10000000000000000000022 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B10000000000000000000022 /* libsqlite3.tbd */; };
+		A1ADGAINBUNDLE00000001 /* AdGainSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A1ADGAINBUNDLE00000002 /* AdGainSDK.bundle */; };
+		A1ADGAINLINK0000000001 /* AdGainSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1ADGAINXCFW0000000001 /* AdGainSDK.xcframework */; };
+		A1CHK000000000000000001 /* DemoIntegrationCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CHK000000000000000003 /* DemoIntegrationCheck.m */; };
+		A1FMT000000000000000001 /* FormatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FMT000000000000000003 /* FormatViewController.m */; };
+		A1JINDAIBUNDLE00000001 /* JinDaiSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A1JINDAIBUNDLE00000002 /* JinDaiSDK.bundle */; };
+		A1JINDAILINK0000000001 /* JinDaiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1JINDAIFW000000000001 /* JinDaiSDK.framework */; };
+		A1LITEMOBEMBED000000001 /* LitemobSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A1LITEMOBXCFW0000000001 /* LitemobSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A1LITEMOBLINK0000000001 /* LitemobSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1LITEMOBXCFW0000000001 /* LitemobSDK.xcframework */; };
+		A1SWIFT0000000000000001 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1SWIFT0000000000000002 /* Dummy.swift */; };
+		D2C98752A077887315F69D47 /* TDAdsSDKDemo/TDAdsSDKDemo/DemoPrivacy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACFBB35EB07500C610CB10B /* TDAdsSDKDemo/TDAdsSDKDemo/DemoPrivacy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A1LITEMOBCOPY0000000001 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A1LITEMOBEMBED000000001 /* LitemobSDK.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1E7DE2221A0B9448361AC3D9 /* AdConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdConfig.h; sourceTree = "<group>"; };
+		89ED64CC9E9B27AA9496C3C3 /* Pods-TDAdsSDKDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDAdsSDKDemo.release.xcconfig"; path = "Target Support Files/Pods-TDAdsSDKDemo/Pods-TDAdsSDKDemo.release.xcconfig"; sourceTree = "<group>"; };
+		983ADAB89438F4434994AF4B /* Pods-TDAdsSDKDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDAdsSDKDemo.debug.xcconfig"; path = "Target Support Files/Pods-TDAdsSDKDemo/Pods-TDAdsSDKDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		9ACFBB35EB07500C610CB10B /* TDAdsSDKDemo/TDAdsSDKDemo/DemoPrivacy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDAdsSDKDemo/TDAdsSDKDemo/DemoPrivacy.m; sourceTree = SOURCE_ROOT; };
+		9C1A15C062B21BC9A7C088E5 /* TDAdsSDKDemo/TDAdsSDKDemo/DemoPrivacy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDAdsSDKDemo/TDAdsSDKDemo/DemoPrivacy.h; sourceTree = SOURCE_ROOT; };
+		A1ADGAINBUNDLE00000002 /* AdGainSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdGainSDK.bundle; path = "ThirdParty/AdGainSDK-current/AdGainSDK.bundle"; sourceTree = SOURCE_ROOT; };
+		A1ADGAINXCFW0000000001 /* AdGainSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AdGainSDK.xcframework; path = "ThirdParty/AdGainSDK-current/AdGainSDK.xcframework"; sourceTree = SOURCE_ROOT; };
+		A1CHK000000000000000002 /* DemoIntegrationCheck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoIntegrationCheck.h; sourceTree = "<group>"; };
+		A1CHK000000000000000003 /* DemoIntegrationCheck.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoIntegrationCheck.m; sourceTree = "<group>"; };
+		A1FMT000000000000000002 /* FormatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FormatViewController.h; sourceTree = "<group>"; };
+		A1FMT000000000000000003 /* FormatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FormatViewController.m; sourceTree = "<group>"; };
+		A1JINDAIBUNDLE00000002 /* JinDaiSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = JinDaiSDK.bundle; path = "ThirdParty/JinDaiSDK-current/JinDaiSDK.bundle"; sourceTree = SOURCE_ROOT; };
+		A1JINDAIFW000000000001 /* JinDaiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JinDaiSDK.framework; path = "ThirdParty/JinDaiSDK-current/JinDaiSDK.framework"; sourceTree = SOURCE_ROOT; };
+		A1LITEMOBXCFW0000000001 /* LitemobSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = LitemobSDK.xcframework; path = "ThirdParty/LitemobSDK-current/LitemobSDK.xcframework"; sourceTree = SOURCE_ROOT; };
+		A1SWIFT0000000000000002 /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
+		B10000000000000000000000 /* TDAdsSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDAdsSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B10000000000000000000001 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B10000000000000000000002 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		B10000000000000000000004 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B10000000000000000000005 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B10000000000000000000006 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		B10000000000000000000008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B10000000000000000000020 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B10000000000000000000021 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B10000000000000000000022 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		DAD1269E7E520253F1F3C440 /* Pods_TDAdsSDKDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TDAdsSDKDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C10000000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1LITEMOBLINK0000000001 /* LitemobSDK.xcframework in Frameworks */,
+				A1ADGAINLINK0000000001 /* AdGainSDK.xcframework in Frameworks */,
+				A1JINDAILINK0000000001 /* JinDaiSDK.framework in Frameworks */,
+				A10000000000000000000020 /* UIKit.framework in Frameworks */,
+				A10000000000000000000021 /* Foundation.framework in Frameworks */,
+				A10000000000000000000022 /* libsqlite3.tbd in Frameworks */,
+				650A7C548F543500DCB1A5DB /* Pods_TDAdsSDKDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5BD34C6C2EA1E499709C41DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				983ADAB89438F4434994AF4B /* Pods-TDAdsSDKDemo.debug.xcconfig */,
+				89ED64CC9E9B27AA9496C3C3 /* Pods-TDAdsSDKDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D10000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				D10000000000000000000002 /* TDAdsSDKDemo/TDAdsSDKDemo */,
+				D10000000000000000000003 /* Frameworks */,
+				D10000000000000000000004 /* Products */,
+				5BD34C6C2EA1E499709C41DE /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		D10000000000000000000002 /* TDAdsSDKDemo/TDAdsSDKDemo */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000000000000000005 /* AppDelegate.h */,
+				B10000000000000000000001 /* AppDelegate.m */,
+				B10000000000000000000006 /* MainViewController.h */,
+				1E7DE2221A0B9448361AC3D9 /* AdConfig.h */,
+				A1CHK000000000000000002 /* DemoIntegrationCheck.h */,
+				A1CHK000000000000000003 /* DemoIntegrationCheck.m */,
+				A1SWIFT0000000000000002 /* Dummy.swift */,
+				A1FMT000000000000000002 /* FormatViewController.h */,
+				A1FMT000000000000000003 /* FormatViewController.m */,
+				B10000000000000000000002 /* MainViewController.m */,
+				9ACFBB35EB07500C610CB10B /* TDAdsSDKDemo/TDAdsSDKDemo/DemoPrivacy.m */,
+				9C1A15C062B21BC9A7C088E5 /* TDAdsSDKDemo/TDAdsSDKDemo/DemoPrivacy.h */,
+				B10000000000000000000004 /* main.m */,
+				B10000000000000000000008 /* Info.plist */,
+			);
+			path = TDAdsSDKDemo/TDAdsSDKDemo;
+			sourceTree = "<group>";
+		};
+		D10000000000000000000003 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1LITEMOBXCFW0000000001 /* LitemobSDK.xcframework */,
+				A1ADGAINXCFW0000000001 /* AdGainSDK.xcframework */,
+				A1ADGAINBUNDLE00000002 /* AdGainSDK.bundle */,
+				A1JINDAIFW000000000001 /* JinDaiSDK.framework */,
+				A1JINDAIBUNDLE00000002 /* JinDaiSDK.bundle */,
+				B10000000000000000000020 /* UIKit.framework */,
+				B10000000000000000000021 /* Foundation.framework */,
+				B10000000000000000000022 /* libsqlite3.tbd */,
+				DAD1269E7E520253F1F3C440 /* Pods_TDAdsSDKDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D10000000000000000000004 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000000000000000000 /* TDAdsSDKDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E10000000000000000000001 /* TDAdsSDKDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F10000000000000000000003 /* Build configuration list for PBXNativeTarget "TDAdsSDKDemo" */;
+			buildPhases = (
+				DB5F69FDEB9F478CAE8E5239 /* [CP] Check Pods Manifest.lock */,
+				C10000000000000000000002 /* Sources */,
+				C10000000000000000000001 /* Frameworks */,
+				C10000000000000000000003 /* Resources */,
+				A1LITEMOBCOPY0000000001 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TDAdsSDKDemo;
+			productName = TDAdsSDKDemo;
+			productReference = B10000000000000000000000 /* TDAdsSDKDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E10000000000000000000000 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = F10000000000000000000001 /* Build configuration list for PBXProject "TDAdsSDKDemo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D10000000000000000000001;
+			productRefGroup = D10000000000000000000004 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E10000000000000000000001 /* TDAdsSDKDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C10000000000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1ADGAINBUNDLE00000001 /* AdGainSDK.bundle in Resources */,
+				A1JINDAIBUNDLE00000001 /* JinDaiSDK.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DB5F69FDEB9F478CAE8E5239 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TDAdsSDKDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C10000000000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2C98752A077887315F69D47 /* TDAdsSDKDemo/TDAdsSDKDemo/DemoPrivacy.m in Sources */,
+				A10000000000000000000001 /* AppDelegate.m in Sources */,
+				A10000000000000000000002 /* MainViewController.m in Sources */,
+				A1CHK000000000000000001 /* DemoIntegrationCheck.m in Sources */,
+				A1SWIFT0000000000000001 /* Dummy.swift in Sources */,
+				A1FMT000000000000000001 /* FormatViewController.m in Sources */,
+				A10000000000000000000004 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F10000000000000000000010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F10000000000000000000011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F10000000000000000000012 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 983ADAB89438F4434994AF4B /* Pods-TDAdsSDKDemo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = arm64;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CTP5HH573R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ThirdParty/AdGainSDK-current",
+					"$(PROJECT_DIR)/ThirdParty/LitemobSDK-current",
+					"$(PROJECT_DIR)/ThirdParty/JinDaiSDK-current",
+				);
+				INFOPLIST_FILE = TDAdsSDKDemo/TDAdsSDKDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/lib/swift,
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lsqlite3",
+					"-lresolv",
+					"-lresolv.9",
+					"-lc++",
+					"-lc++abi",
+					"-lz",
+					"-lxml2",
+					"-lbz2",
+					"-liconv",
+					"-framework",
+					LitemobSDK,
+					"-framework",
+					JinDaiSDK,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tyedo.TDAdsSDKDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F10000000000000000000013 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89ED64CC9E9B27AA9496C3C3 /* Pods-TDAdsSDKDemo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = arm64;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CTP5HH573R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ThirdParty/AdGainSDK-current",
+					"$(PROJECT_DIR)/ThirdParty/LitemobSDK-current",
+					"$(PROJECT_DIR)/ThirdParty/JinDaiSDK-current",
+				);
+				INFOPLIST_FILE = TDAdsSDKDemo/TDAdsSDKDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/lib/swift,
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lsqlite3",
+					"-lresolv",
+					"-lresolv.9",
+					"-lc++",
+					"-lc++abi",
+					"-lz",
+					"-lxml2",
+					"-lbz2",
+					"-liconv",
+					"-framework",
+					LitemobSDK,
+					"-framework",
+					JinDaiSDK,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tyedo.TDAdsSDKDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F10000000000000000000001 /* Build configuration list for PBXProject "TDAdsSDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F10000000000000000000010 /* Debug */,
+				F10000000000000000000011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F10000000000000000000003 /* Build configuration list for PBXNativeTarget "TDAdsSDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F10000000000000000000012 /* Debug */,
+				F10000000000000000000013 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E10000000000000000000000 /* Project object */;
+}
