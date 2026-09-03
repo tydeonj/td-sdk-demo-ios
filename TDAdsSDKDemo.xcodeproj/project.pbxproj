@@ -18,6 +18,7 @@
 		A1ADGAINLINK0000000001 /* AdGainSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1ADGAINXCFW0000000001 /* AdGainSDK.xcframework */; };
 		A1CHK000000000000000001 /* DemoIntegrationCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CHK000000000000000003 /* DemoIntegrationCheck.m */; };
 		A1FMT000000000000000001 /* FormatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FMT000000000000000003 /* FormatViewController.m */; };
+		E8B91A2C4D5F60718293A4D1 /* DemoNativeAssemble.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B91A2C4D5F60718293A4D3 /* DemoNativeAssemble.m */; };
 		A1JINDAIBUNDLE00000001 /* JinDaiSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A1JINDAIBUNDLE00000002 /* JinDaiSDK.bundle */; };
 		A1JINDAILINK0000000001 /* JinDaiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1JINDAIFW000000000001 /* JinDaiSDK.framework */; };
 		A1LITEMOBEMBED000000001 /* LitemobSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A1LITEMOBXCFW0000000001 /* LitemobSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -52,6 +53,8 @@
 		A1CHK000000000000000003 /* DemoIntegrationCheck.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoIntegrationCheck.m; sourceTree = "<group>"; };
 		A1FMT000000000000000002 /* FormatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FormatViewController.h; sourceTree = "<group>"; };
 		A1FMT000000000000000003 /* FormatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FormatViewController.m; sourceTree = "<group>"; };
+		E8B91A2C4D5F60718293A4D2 /* DemoNativeAssemble.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoNativeAssemble.h; sourceTree = "<group>"; };
+		E8B91A2C4D5F60718293A4D3 /* DemoNativeAssemble.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoNativeAssemble.m; sourceTree = "<group>"; };
 		A1JINDAIBUNDLE00000002 /* JinDaiSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = JinDaiSDK.bundle; path = "ThirdParty/JinDaiSDK-current/JinDaiSDK.bundle"; sourceTree = SOURCE_ROOT; };
 		A1JINDAIFW000000000001 /* JinDaiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JinDaiSDK.framework; path = "ThirdParty/JinDaiSDK-current/JinDaiSDK.framework"; sourceTree = SOURCE_ROOT; };
 		A1LITEMOBXCFW0000000001 /* LitemobSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = LitemobSDK.xcframework; path = "ThirdParty/LitemobSDK-current/LitemobSDK.xcframework"; sourceTree = SOURCE_ROOT; };
@@ -118,6 +121,8 @@
 				A1SWIFT0000000000000002 /* Dummy.swift */,
 				A1FMT000000000000000002 /* FormatViewController.h */,
 				A1FMT000000000000000003 /* FormatViewController.m */,
+				E8B91A2C4D5F60718293A4D2 /* DemoNativeAssemble.h */,
+				E8B91A2C4D5F60718293A4D3 /* DemoNativeAssemble.m */,
 				B10000000000000000000002 /* MainViewController.m */,
 				9ACFBB35EB07500C610CB10B /* TDAdsSDKDemo/TDAdsSDKDemo/DemoPrivacy.m */,
 				9C1A15C062B21BC9A7C088E5 /* TDAdsSDKDemo/TDAdsSDKDemo/DemoPrivacy.h */,
@@ -248,6 +253,7 @@
 				A1CHK000000000000000001 /* DemoIntegrationCheck.m in Sources */,
 				A1SWIFT0000000000000001 /* Dummy.swift in Sources */,
 				A1FMT000000000000000001 /* FormatViewController.m in Sources */,
+				E8B91A2C4D5F60718293A4D1 /* DemoNativeAssemble.m in Sources */,
 				A10000000000000000000004 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

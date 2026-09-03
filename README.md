@@ -4,7 +4,7 @@
 文档仓库：https://github.com/tydeonj/td-sdk-docs  
 Android Demo：https://github.com/tydeonj/td-sdk-demo-android  
 
-正式工程用 CocoaPods Trunk。本 Demo 从公网仓拉 `1.1.2.7`。三步速查：[接入指南.md](接入指南.md)
+正式工程用 CocoaPods Trunk。本 Demo 从公网仓拉 `1.1.2.8`。三步速查：[接入指南.md](接入指南.md)
 
 ```bash
 pod install

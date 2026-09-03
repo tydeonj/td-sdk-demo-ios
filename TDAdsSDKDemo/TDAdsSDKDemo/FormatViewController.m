@@ -14,6 +14,7 @@
 #import <TDAdsBase/TDRenderType.h>
 #import <TDAdsBase/TDNativeMaterial.h>
 #import <TDAdsBase/TDError.h>
+#import "DemoNativeAssemble.h"
 
 @interface FormatViewController () <TDRewardListener, TDInterstitialListener, TDSplashListener, TDBannerListener, TDNativeListener>
 @property (nonatomic, strong) id ad;
@@ -226,7 +227,7 @@
         self.adContainerHeight.constant = 200;
     } else if ([t isEqualToString:@"native"]) {
         self.adContainer.hidden = NO;
-        self.adContainerHeight.constant = 280;
+        self.adContainerHeight.constant = 360;
     } else {
         self.adContainer.hidden = YES;
         self.adContainerHeight.constant = 0;
@@ -281,64 +282,9 @@
 }
 
 - (void)assembleNativeIfNeeded:(TDAdInfo *)info {
-    if (info.renderType != TDRenderTypeSelfRender) return;
+    if (![DemoNativeAssemble assemble:info into:self.adContainer]) return;
     TDNativeMaterial *m = info.nativeMaterial;
-    for (UIView *sub in [self.adContainer.subviews copy]) {
-        [sub removeFromSuperview];
-    }
-    UIStackView *stack = [UIStackView new];
-    stack.axis = UILayoutConstraintAxisVertical;
-    stack.spacing = 4;
-    stack.translatesAutoresizingMaskIntoConstraints = NO;
-    UILabel *title = [UILabel new];
-    title.text = m.title ?: @"";
-    title.font = [UIFont boldSystemFontOfSize:16];
-    title.userInteractionEnabled = YES;
-    title.accessibilityIdentifier = TDNativeMaterial.tagTitle;
-    UILabel *desc = [UILabel new];
-    desc.text = m.desc ?: @"";
-    desc.font = [UIFont systemFontOfSize:13];
-    desc.numberOfLines = 2;
-    desc.userInteractionEnabled = YES;
-    desc.accessibilityIdentifier = TDNativeMaterial.tagDesc;
-    UILabel *cta = [UILabel new];
-    cta.text = m.cta.length ? m.cta : @"查看详情";
-    cta.font = [UIFont systemFontOfSize:14];
-    cta.textColor = UIColor.systemBlueColor;
-    cta.userInteractionEnabled = YES;
-    cta.accessibilityIdentifier = TDNativeMaterial.tagCta;
-    [stack addArrangedSubview:title];
-    [stack addArrangedSubview:desc];
-    [stack addArrangedSubview:cta];
-    if (m.imageUrl.length) {
-        [stack addArrangedSubview:[self nativeImageView:m.imageUrl tag:TDNativeMaterial.tagImage height:120]];
-    }
-    [self.adContainer addSubview:stack];
-    [NSLayoutConstraint activateConstraints:@[
-        [stack.leadingAnchor constraintEqualToAnchor:self.adContainer.leadingAnchor constant:12],
-        [stack.trailingAnchor constraintEqualToAnchor:self.adContainer.trailingAnchor constant:-12],
-        [stack.topAnchor constraintEqualToAnchor:self.adContainer.topAnchor constant:8],
-    ]];
     [self append:@"assembled self_render title=%@ img=%@", m.title ?: @"", m.imageUrl ?: @""];
-}
-
-- (UIImageView *)nativeImageView:(NSString *)url tag:(NSString *)tag height:(CGFloat)h {
-    UIImageView *img = [UIImageView new];
-    img.contentMode = UIViewContentModeScaleAspectFill;
-    img.clipsToBounds = YES;
-    img.backgroundColor = [UIColor colorWithWhite:0.92 alpha:1];
-    img.userInteractionEnabled = YES;
-    img.accessibilityIdentifier = tag;
-    [img.heightAnchor constraintEqualToConstant:h].active = YES;
-    NSURL *u = [NSURL URLWithString:url ?: @""];
-    if (!u) return img;
-    [[[NSURLSession sharedSession] dataTaskWithURL:u completionHandler:^(NSData *data, NSURLResponse *r, NSError *e) {
-        if (!data || e) return;
-        UIImage *im = [UIImage imageWithData:data];
-        if (!im) return;
-        dispatch_async(dispatch_get_main_queue(), ^{ img.image = im; });
-    }] resume];
-    return img;
 }
 
 - (void)onAdLoadFailed:(TDError *)error { [self append:@"onAdLoadFailed %@", error]; }
