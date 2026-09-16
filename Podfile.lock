@@ -1,20 +1,20 @@
 PODS:
-  - TDAdsAdGain (1.1.2.8):
-    - TDAdsBase (= 1.1.2.8)
-  - TDAdsBase (1.1.2.8)
-  - TDAdsJDSDK (1.1.2.8):
-    - TDAdsBase (= 1.1.2.8)
-  - TDAdsLtmb (1.1.2.8):
-    - TDAdsBase (= 1.1.2.8)
-  - TDAdsSDK (1.1.2.8):
-    - TDAdsBase (= 1.1.2.8)
+  - TDAdsAdGain (1.1.2.9):
+    - TDAdsBase (= 1.1.2.9)
+  - TDAdsBase (1.1.2.9)
+  - TDAdsJDSDK (1.1.2.9):
+    - TDAdsBase (= 1.1.2.9)
+  - TDAdsLtmb (1.1.2.9):
+    - TDAdsBase (= 1.1.2.9)
+  - TDAdsSDK (1.1.2.9):
+    - TDAdsBase (= 1.1.2.9)
 
 DEPENDENCIES:
-  - TDAdsAdGain (= 1.1.2.8)
-  - TDAdsBase (= 1.1.2.8)
-  - TDAdsJDSDK (= 1.1.2.8)
-  - TDAdsLtmb (= 1.1.2.8)
-  - TDAdsSDK (= 1.1.2.8)
+  - TDAdsAdGain (= 1.1.2.9)
+  - TDAdsBase (= 1.1.2.9)
+  - TDAdsJDSDK (= 1.1.2.9)
+  - TDAdsLtmb (= 1.1.2.9)
+  - TDAdsSDK (= 1.1.2.9)
 
 SPEC REPOS:
   trunk:
@@ -25,12 +25,12 @@ SPEC REPOS:
     - TDAdsSDK
 
 SPEC CHECKSUMS:
-  TDAdsAdGain: 360616ce63b50a72927aa812448629ed29bfa7a1
-  TDAdsBase: c838421469c0e053352a35dfbe779cbddbd15c73
-  TDAdsJDSDK: 111ab9eb693249eafc59c8e42b12a55ee4961e11
-  TDAdsLtmb: 677a83ea0055e7abffc5c82ad6beda42cb63ecbd
-  TDAdsSDK: 946975fa77a2a51b1c7ce91158b14a6deb204f5b
+  TDAdsAdGain: 38aa5d2f91438691359cf36d47f8ec79144f83cf
+  TDAdsBase: cfa5ea51f6e401634795d83ea08585011de98ce5
+  TDAdsJDSDK: 298bb2eb7de0bfc4d66f578d1980138d87a496ab
+  TDAdsLtmb: a4f0dde9fde41da3d723117859f4f4a6a79cde0a
+  TDAdsSDK: 8d21fd9fb3594ad93efd60dc3686f852e04d4da2
 
-PODFILE CHECKSUM: 03cf462b74358217ab2da5ea0003f0c945707f9f
+PODFILE CHECKSUM: d555715a1c6f24ce0d8fb97fc7b9ec1d56b69031
 
 COCOAPODS: 1.17.0
