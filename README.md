@@ -4,7 +4,7 @@
 文档仓库：https://github.com/tydeonj/td-sdk-docs  
 Android Demo：https://github.com/tydeonj/td-sdk-demo-android  
 
-正式工程走 CocoaPods Trunk：`pod 'TDAdsSDK', '1.1.2.10'`（二进制在 Gitee）。本 Demo 按 `1.1.2.10`。三步速查：[接入指南.md](接入指南.md)
+正式工程走 CocoaPods Trunk：`pod 'TDAdsSDK', '1.1.2.11'`（二进制在 Gitee）。本 Demo 按 `1.1.2.11`。三步速查：[接入指南.md](接入指南.md)
 
 ```bash
 pod install

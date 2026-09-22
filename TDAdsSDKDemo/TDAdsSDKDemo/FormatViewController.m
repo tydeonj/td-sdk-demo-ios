@@ -25,6 +25,8 @@
 @property (nonatomic, strong) UIView *adContainer;
 @property (nonatomic, strong) NSLayoutConstraint *adContainerHeight;
 @property (nonatomic, strong) UIView *splashOverlay;
+@property (nonatomic, strong) UIView *splashAdArea;
+@property (nonatomic, strong) UIView *splashBottomBar;
 @property (nonatomic, strong) NSDateFormatter *timeFmt;
 @property (nonatomic, strong) TDAdInfo *lastNativeInfo;
 @end
@@ -112,6 +114,7 @@
         [self.splashOverlay.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
         [self.splashOverlay.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor],
     ]];
+    [self installSplashBottomLayout];
     [self applyContainerForType];
     [self createAd];
 }
@@ -153,7 +156,7 @@
         [a setAdListener:self]; self.ad = a;
     } else if ([t isEqualToString:@"splash"]) {
         TDSplash *a = [[TDSplash alloc] initWithAdUnitId:u];
-        [a setAdListener:self]; [a setContainer:self.splashOverlay]; self.ad = a;
+        [a setAdListener:self]; [a setContainer:self.splashAdArea]; self.ad = a;
     } else if ([t isEqualToString:@"banner"]) {
         TDBanner *a = [[TDBanner alloc] initWithAdUnitId:u];
         [a setAdListener:self]; [a setContainer:self.adContainer]; self.ad = a;
@@ -234,13 +237,87 @@
     }
 }
 
+- (void)installSplashBottomLayout {
+    self.splashAdArea = [UIView new];
+    self.splashAdArea.backgroundColor = UIColor.clearColor;
+    self.splashAdArea.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.splashOverlay addSubview:self.splashAdArea];
+
+    self.splashBottomBar = [self makeSplashBottomBar];
+    [self.splashOverlay addSubview:self.splashBottomBar];
+
+    CGFloat bottomH = MIN(CGRectGetHeight(UIScreen.mainScreen.bounds) * 0.20, 120);
+    [NSLayoutConstraint activateConstraints:@[
+        [self.splashAdArea.topAnchor constraintEqualToAnchor:self.splashOverlay.topAnchor],
+        [self.splashAdArea.leadingAnchor constraintEqualToAnchor:self.splashOverlay.leadingAnchor],
+        [self.splashAdArea.trailingAnchor constraintEqualToAnchor:self.splashOverlay.trailingAnchor],
+        [self.splashAdArea.bottomAnchor constraintEqualToAnchor:self.splashBottomBar.topAnchor],
+        [self.splashBottomBar.leadingAnchor constraintEqualToAnchor:self.splashOverlay.leadingAnchor],
+        [self.splashBottomBar.trailingAnchor constraintEqualToAnchor:self.splashOverlay.trailingAnchor],
+        [self.splashBottomBar.bottomAnchor constraintEqualToAnchor:self.splashOverlay.bottomAnchor],
+        [self.splashBottomBar.heightAnchor constraintEqualToConstant:bottomH],
+    ]];
+}
+
+- (UIView *)makeSplashBottomBar {
+    UIView *bar = [UIView new];
+    bar.backgroundColor = UIColor.whiteColor;
+    bar.translatesAutoresizingMaskIntoConstraints = NO;
+    UILabel *title = [UILabel new];
+    title.text = @"TD Ads";
+    title.font = [UIFont boldSystemFontOfSize:18];
+    title.textColor = [UIColor colorWithWhite:0.15 alpha:1];
+    title.textAlignment = NSTextAlignmentCenter;
+    title.translatesAutoresizingMaskIntoConstraints = NO;
+    UILabel *sub = [UILabel new];
+    sub.text = @"开屏底部区域";
+    sub.font = [UIFont systemFontOfSize:12];
+    sub.textColor = [UIColor colorWithWhite:0.4 alpha:1];
+    sub.textAlignment = NSTextAlignmentCenter;
+    sub.translatesAutoresizingMaskIntoConstraints = NO;
+    [bar addSubview:title];
+    [bar addSubview:sub];
+    [NSLayoutConstraint activateConstraints:@[
+        [title.centerXAnchor constraintEqualToAnchor:bar.centerXAnchor],
+        [title.centerYAnchor constraintEqualToAnchor:bar.centerYAnchor constant:-10],
+        [sub.centerXAnchor constraintEqualToAnchor:bar.centerXAnchor],
+        [sub.topAnchor constraintEqualToAnchor:title.bottomAnchor constant:4],
+    ]];
+    return bar;
+}
+
+- (void)ensureSplashBottomBar {
+    if (self.splashBottomBar.superview == self.splashOverlay) return;
+    [self.splashOverlay addSubview:self.splashBottomBar];
+    CGFloat bottomH = MIN(CGRectGetHeight(UIScreen.mainScreen.bounds) * 0.20, 120);
+    [NSLayoutConstraint activateConstraints:@[
+        [self.splashBottomBar.leadingAnchor constraintEqualToAnchor:self.splashOverlay.leadingAnchor],
+        [self.splashBottomBar.trailingAnchor constraintEqualToAnchor:self.splashOverlay.trailingAnchor],
+        [self.splashBottomBar.bottomAnchor constraintEqualToAnchor:self.splashOverlay.bottomAnchor],
+        [self.splashBottomBar.heightAnchor constraintEqualToConstant:bottomH],
+        [self.splashAdArea.bottomAnchor constraintEqualToAnchor:self.splashBottomBar.topAnchor],
+    ]];
+}
+
 - (void)showSplashOverlayThenReleaseIfUnused {
+    [self ensureSplashBottomBar];
     self.splashOverlay.backgroundColor = UIColor.clearColor;
     self.splashOverlay.alpha = 1;
     self.splashOverlay.userInteractionEnabled = YES;
     [self.view layoutIfNeeded];
-    [self.ad showAdFrom:self container:self.splashOverlay sceneId:@"demo_scene"];
-    if (self.splashOverlay.subviews.count == 0) {
+    [self.ad showAdFrom:self container:self.splashAdArea sceneId:@"demo_scene"];
+    NSString *net = [[self.ad getAdInfo] networkName] ?: @"?";
+    BOOL windowSrc = [@[@"jdsdk", @"adgain", @"ltmb"] containsObject:net.lowercaseString];
+    if (windowSrc) {
+        [self append:@"splash net=%@ 全屏源：底部白条「TD Ads」应由对方 SDK 画在开屏底部（看广告最下面，不是 Demo 页）", net];
+    } else {
+        [self append:@"splash net=%@ 容器源：上面广告、下面白条「TD Ads / 开屏底部区域」", net];
+    }
+    if (self.splashAdArea.subviews.count == 0 && windowSrc) {
+        self.splashOverlay.userInteractionEnabled = NO;
+        return;
+    }
+    if (self.splashAdArea.subviews.count == 0) {
         [self hideSplashOverlay];
         return;
     }
@@ -248,9 +325,10 @@
 }
 
 - (void)hideSplashOverlay {
-    for (UIView *sub in [self.splashOverlay.subviews copy]) {
+    for (UIView *sub in [self.splashAdArea.subviews copy]) {
         [sub removeFromSuperview];
     }
+    [self ensureSplashBottomBar];
     self.splashOverlay.alpha = 0;
     self.splashOverlay.userInteractionEnabled = NO;
 }

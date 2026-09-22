@@ -1,7 +1,7 @@
 platform :ios, '12.0'
 use_frameworks! :linkage => :static
 
-ver = '1.1.2.10'
+ver = '1.1.2.11'
 
 target 'TDAdsSDKDemo' do
   pod 'TDAdsBase',   ver

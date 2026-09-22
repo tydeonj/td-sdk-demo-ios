@@ -84,6 +84,17 @@
     [badge.heightAnchor constraintEqualToConstant:16].active = YES;
     [badge setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
     [titleRow addArrangedSubview:badge];
+    UILabel *close = [UILabel new];
+    close.text = @"✕";
+    close.font = [UIFont systemFontOfSize:12];
+    close.textColor = [UIColor colorWithWhite:0.45 alpha:1];
+    close.textAlignment = NSTextAlignmentCenter;
+    close.userInteractionEnabled = YES;
+    close.accessibilityIdentifier = TDNativeMaterial.tagClose;
+    [close.widthAnchor constraintEqualToConstant:22].active = YES;
+    [close.heightAnchor constraintEqualToConstant:22].active = YES;
+    [close setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
+    [titleRow addArrangedSubview:close];
     [texts addArrangedSubview:titleRow];
 
     if (m.desc.length) {
