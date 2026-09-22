@@ -24,6 +24,9 @@
 @property (nonatomic, strong) UITextView *logView;
 @property (nonatomic, strong) UIView *adContainer;
 @property (nonatomic, strong) NSLayoutConstraint *adContainerHeight;
+@property (nonatomic, strong) UILabel *splashHint;
+@property (nonatomic, strong) UIView *splashPreview;
+@property (nonatomic, strong) NSLayoutConstraint *splashPreviewHeight;
 @property (nonatomic, strong) UIView *splashOverlay;
 @property (nonatomic, strong) UIView *splashAdArea;
 @property (nonatomic, strong) UIView *splashBottomBar;
@@ -81,6 +84,21 @@
     [btns addArrangedSubview:[self btn:@"Show" action:@selector(doShow)]];
     [btns addArrangedSubview:[self btn:@"isReady" action:@selector(doReady)]];
     [stack addArrangedSubview:btns];
+
+    self.splashHint = [UILabel new];
+    self.splashHint.font = [UIFont systemFontOfSize:12];
+    self.splashHint.textColor = [UIColor colorWithWhite:0.4 alpha:1];
+    self.splashHint.numberOfLines = 0;
+    self.splashHint.text = @"开屏两段：上方广告区，下方白色底部条（logo / 应用名）";
+    [stack addArrangedSubview:self.splashHint];
+
+    self.splashPreview = [UIView new];
+    self.splashPreview.backgroundColor = [UIColor colorWithWhite:0.15 alpha:1];
+    self.splashPreview.clipsToBounds = YES;
+    self.splashPreview.layer.cornerRadius = 8;
+    self.splashPreviewHeight = [self.splashPreview.heightAnchor constraintEqualToConstant:280];
+    self.splashPreviewHeight.active = YES;
+    [stack addArrangedSubview:self.splashPreview];
 
     self.adContainer = [UIView new];
     self.adContainer.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
@@ -225,6 +243,10 @@
 - (void)applyContainerForType {
     NSString *t = self.formatType;
     [self hideSplashOverlay];
+    BOOL splash = [t isEqualToString:@"splash"];
+    self.splashHint.hidden = !splash;
+    self.splashPreview.hidden = !splash;
+    self.splashPreviewHeight.constant = splash ? 280 : 0;
     if ([t isEqualToString:@"banner"]) {
         self.adContainer.hidden = NO;
         self.adContainerHeight.constant = 200;
@@ -239,24 +261,55 @@
 
 - (void)installSplashBottomLayout {
     self.splashAdArea = [UIView new];
-    self.splashAdArea.backgroundColor = UIColor.clearColor;
+    self.splashAdArea.backgroundColor = [UIColor colorWithWhite:0.92 alpha:1];
     self.splashAdArea.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.splashOverlay addSubview:self.splashAdArea];
-
-    self.splashBottomBar = [self makeSplashBottomBar];
-    [self.splashOverlay addSubview:self.splashBottomBar];
-
-    CGFloat bottomH = MIN(CGRectGetHeight(UIScreen.mainScreen.bounds) * 0.20, 120);
+    UILabel *areaHint = [UILabel new];
+    areaHint.text = @"开屏广告区";
+    areaHint.tag = 9001;
+    areaHint.font = [UIFont systemFontOfSize:14];
+    areaHint.textColor = [UIColor colorWithWhite:0.5 alpha:1];
+    areaHint.textAlignment = NSTextAlignmentCenter;
+    areaHint.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.splashAdArea addSubview:areaHint];
     [NSLayoutConstraint activateConstraints:@[
-        [self.splashAdArea.topAnchor constraintEqualToAnchor:self.splashOverlay.topAnchor],
-        [self.splashAdArea.leadingAnchor constraintEqualToAnchor:self.splashOverlay.leadingAnchor],
-        [self.splashAdArea.trailingAnchor constraintEqualToAnchor:self.splashOverlay.trailingAnchor],
+        [areaHint.centerXAnchor constraintEqualToAnchor:self.splashAdArea.centerXAnchor],
+        [areaHint.centerYAnchor constraintEqualToAnchor:self.splashAdArea.centerYAnchor],
+    ]];
+    self.splashBottomBar = [self makeSplashBottomBar];
+    [self layoutSplashChromeIn:self.splashPreview];
+}
+
+- (void)layoutSplashChromeIn:(UIView *)host {
+    if (!host) return;
+    [self.splashAdArea removeFromSuperview];
+    [host addSubview:self.splashAdArea];
+    [self ensureDemoSplashBarIn:host];
+    CGFloat bottomH = (host == self.splashPreview)
+        ? 80
+        : MIN(CGRectGetHeight(UIScreen.mainScreen.bounds) * 0.20, 120);
+    [NSLayoutConstraint activateConstraints:@[
+        [self.splashAdArea.topAnchor constraintEqualToAnchor:host.topAnchor],
+        [self.splashAdArea.leadingAnchor constraintEqualToAnchor:host.leadingAnchor],
+        [self.splashAdArea.trailingAnchor constraintEqualToAnchor:host.trailingAnchor],
         [self.splashAdArea.bottomAnchor constraintEqualToAnchor:self.splashBottomBar.topAnchor],
-        [self.splashBottomBar.leadingAnchor constraintEqualToAnchor:self.splashOverlay.leadingAnchor],
-        [self.splashBottomBar.trailingAnchor constraintEqualToAnchor:self.splashOverlay.trailingAnchor],
-        [self.splashBottomBar.bottomAnchor constraintEqualToAnchor:self.splashOverlay.bottomAnchor],
+        [self.splashBottomBar.leadingAnchor constraintEqualToAnchor:host.leadingAnchor],
+        [self.splashBottomBar.trailingAnchor constraintEqualToAnchor:host.trailingAnchor],
+        [self.splashBottomBar.bottomAnchor constraintEqualToAnchor:host.bottomAnchor],
         [self.splashBottomBar.heightAnchor constraintEqualToConstant:bottomH],
     ]];
+}
+
+- (void)ensureDemoSplashBarIn:(UIView *)host {
+    BOOL stolen = self.splashBottomBar.superview
+        && self.splashBottomBar.superview != self.splashPreview
+        && self.splashBottomBar.superview != self.splashOverlay;
+    if (!self.splashBottomBar || stolen) {
+        self.splashBottomBar = [self makeSplashBottomBar];
+    }
+    if (self.splashBottomBar.superview != host) {
+        [self.splashBottomBar removeFromSuperview];
+        [host addSubview:self.splashBottomBar];
+    }
 }
 
 - (UIView *)makeSplashBottomBar {
@@ -286,49 +339,26 @@
     return bar;
 }
 
-- (void)ensureSplashBottomBar {
-    if (self.splashBottomBar.superview == self.splashOverlay) return;
-    [self.splashOverlay addSubview:self.splashBottomBar];
-    CGFloat bottomH = MIN(CGRectGetHeight(UIScreen.mainScreen.bounds) * 0.20, 120);
-    [NSLayoutConstraint activateConstraints:@[
-        [self.splashBottomBar.leadingAnchor constraintEqualToAnchor:self.splashOverlay.leadingAnchor],
-        [self.splashBottomBar.trailingAnchor constraintEqualToAnchor:self.splashOverlay.trailingAnchor],
-        [self.splashBottomBar.bottomAnchor constraintEqualToAnchor:self.splashOverlay.bottomAnchor],
-        [self.splashBottomBar.heightAnchor constraintEqualToConstant:bottomH],
-        [self.splashAdArea.bottomAnchor constraintEqualToAnchor:self.splashBottomBar.topAnchor],
-    ]];
-}
-
 - (void)showSplashOverlayThenReleaseIfUnused {
-    [self ensureSplashBottomBar];
-    self.splashOverlay.backgroundColor = UIColor.clearColor;
+    [self layoutSplashChromeIn:self.splashOverlay];
+    self.splashOverlay.backgroundColor = UIColor.blackColor;
     self.splashOverlay.alpha = 1;
     self.splashOverlay.userInteractionEnabled = YES;
     [self.view layoutIfNeeded];
     [self.ad showAdFrom:self container:self.splashAdArea sceneId:@"demo_scene"];
+    if (self.splashBottomBar.superview != self.splashOverlay) {
+        [self layoutSplashChromeIn:self.splashOverlay];
+    }
     NSString *net = [[self.ad getAdInfo] networkName] ?: @"?";
-    BOOL windowSrc = [@[@"jdsdk", @"adgain", @"ltmb"] containsObject:net.lowercaseString];
-    if (windowSrc) {
-        [self append:@"splash net=%@ 全屏源：底部白条「TD Ads」应由对方 SDK 画在开屏底部（看广告最下面，不是 Demo 页）", net];
-    } else {
-        [self append:@"splash net=%@ 容器源：上面广告、下面白条「TD Ads / 开屏底部区域」", net];
-    }
-    if (self.splashAdArea.subviews.count == 0 && windowSrc) {
-        self.splashOverlay.userInteractionEnabled = NO;
-        return;
-    }
-    if (self.splashAdArea.subviews.count == 0) {
-        [self hideSplashOverlay];
-        return;
-    }
-    self.splashOverlay.backgroundColor = UIColor.blackColor;
+    [self append:@"splash net=%@：上面广告区、下面白条「TD Ads / 开屏底部区域」", net];
 }
 
 - (void)hideSplashOverlay {
     for (UIView *sub in [self.splashAdArea.subviews copy]) {
+        if (sub.tag == 9001) continue;
         [sub removeFromSuperview];
     }
-    [self ensureSplashBottomBar];
+    [self layoutSplashChromeIn:self.splashPreview];
     self.splashOverlay.alpha = 0;
     self.splashOverlay.userInteractionEnabled = NO;
 }
@@ -356,6 +386,12 @@
         [self append:@"onAdLoaded %@ renderType=%@", info, TDRenderTypeName(info.renderType)];
     } else {
         [self append:@"onAdLoaded %@", info];
+        if ([self.formatType isEqualToString:@"splash"]) {
+            if (self.splashOverlay.alpha < 0.5) {
+                [self layoutSplashChromeIn:self.splashPreview];
+            }
+            [self append:@"开屏底部条：页上白条「TD Ads」即 bottomView"];
+        }
     }
 }
 
