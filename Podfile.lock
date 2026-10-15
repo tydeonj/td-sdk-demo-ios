@@ -4,7 +4,7 @@ PODS:
   - TDAdsBase (1.1.2.13)
   - TDAdsJDSDK (1.1.2.13):
     - TDAdsBase
-  - TDAdsLtmb (1.1.2.13):
+  - TDAdsLtmb (1.1.2.14):
     - TDAdsBase
   - TDAdsSDK (1.1.2.13):
     - TDAdsBase (= 1.1.2.13)
@@ -13,7 +13,7 @@ DEPENDENCIES:
   - TDAdsAdGain (= 1.1.2.13)
   - TDAdsBase (= 1.1.2.13)
   - TDAdsJDSDK (= 1.1.2.13)
-  - TDAdsLtmb (= 1.1.2.13)
+  - TDAdsLtmb (= 1.1.2.14)
   - TDAdsSDK (= 1.1.2.13)
 
 SPEC REPOS:
@@ -28,9 +28,9 @@ SPEC CHECKSUMS:
   TDAdsAdGain: 97d8b56eece6e692d063eaf0a5438e2f713a61a8
   TDAdsBase: 0ae0d41f39d21dbe63d81d42759413527985acba
   TDAdsJDSDK: 74009944731586b19e5cefc0bb7b475a82773b6e
-  TDAdsLtmb: 59baa25b922bc501426f7293a5169208d7917a26
+  TDAdsLtmb: 4bd5a9facfe9d06dad59db374a209d453d6dc0c1
   TDAdsSDK: cfb0554d4133fdd73cc05d2e31e7cef9a1766bfe
 
-PODFILE CHECKSUM: 59fc5d5a884efcaddb72cb242a1e4898fd0416a7
+PODFILE CHECKSUM: 82f827794aa94ce5f6df1115778b07cf2c5a4612
 
 COCOAPODS: 1.17.0

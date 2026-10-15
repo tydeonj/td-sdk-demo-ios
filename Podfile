@@ -8,5 +8,5 @@ target 'TDAdsSDKDemo' do
   pod 'TDAdsSDK',    ver
   pod 'TDAdsJDSDK',  ver
   pod 'TDAdsAdGain', ver
-  pod 'TDAdsLtmb',   ver
+  pod 'TDAdsLtmb',   '1.1.2.14'
 end
