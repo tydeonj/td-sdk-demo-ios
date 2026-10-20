@@ -6,7 +6,8 @@ ver = '1.1.2.13'
 target 'TDAdsSDKDemo' do
   pod 'TDAdsBase',   ver
   pod 'TDAdsSDK',    ver
-  pod 'TDAdsJDSDK',  ver
-  pod 'TDAdsAdGain', ver
-  pod 'TDAdsLtmb',   '1.1.2.14'
+  # 适配器 1.1.2.15，核心仍用上面的 ver
+  pod 'TDAdsJDSDK',  '1.1.2.15'
+  pod 'TDAdsAdGain', '1.1.2.15'
+  pod 'TDAdsLtmb',   '1.1.2.15'
 end
