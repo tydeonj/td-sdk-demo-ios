@@ -1,23 +1,26 @@
 PODS:
-  - TDAdsAdGain (1.1.2.15):
+  - LitemobAd (1.7.8)
+  - TDAdsAdGain (1.1.2.17):
     - TDAdsBase
   - TDAdsBase (1.1.2.13)
   - TDAdsJDSDK (1.1.2.15):
     - TDAdsBase
-  - TDAdsLtmb (1.1.2.15):
+  - TDAdsLtmb (1.1.2.17):
     - TDAdsBase
   - TDAdsSDK (1.1.2.13):
     - TDAdsBase (= 1.1.2.13)
 
 DEPENDENCIES:
-  - TDAdsAdGain (= 1.1.2.15)
+  - LitemobAd (= 1.7.8)
+  - TDAdsAdGain (= 1.1.2.17)
   - TDAdsBase (= 1.1.2.13)
   - TDAdsJDSDK (= 1.1.2.15)
-  - TDAdsLtmb (= 1.1.2.15)
+  - TDAdsLtmb (= 1.1.2.17)
   - TDAdsSDK (= 1.1.2.13)
 
 SPEC REPOS:
   trunk:
+    - LitemobAd
     - TDAdsAdGain
     - TDAdsBase
     - TDAdsJDSDK
@@ -25,12 +28,13 @@ SPEC REPOS:
     - TDAdsSDK
 
 SPEC CHECKSUMS:
-  TDAdsAdGain: 3c7fa56721a555514ce10eb49d7bac234c921b3d
+  LitemobAd: 640de9b4dc4fcb34e65e60fa8a4e722767088750
+  TDAdsAdGain: c4eeca9128c5f27c8f7bf2bb8d53153fc3a0e68c
   TDAdsBase: 0ae0d41f39d21dbe63d81d42759413527985acba
   TDAdsJDSDK: d40ecc8aa3588020e5a93fb481e320258cbf253a
-  TDAdsLtmb: 2576640490e216b6a9ed04e8a4638eac959ca3e1
+  TDAdsLtmb: a48f52f1332f4384e030af41d80ef809aa3d61f5
   TDAdsSDK: cfb0554d4133fdd73cc05d2e31e7cef9a1766bfe
 
-PODFILE CHECKSUM: a7ed1ed983c6c106f410349a4d7e6b8fc1d8008b
+PODFILE CHECKSUM: d22367122a6af7f1002da51f5aa3f6163a349183
 
-COCOAPODS: 1.17.0
+COCOAPODS: 1.14.3

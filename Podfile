@@ -1,13 +1,11 @@
 platform :ios, '12.0'
 use_frameworks! :linkage => :static
 
-ver = '1.1.2.13'
-
 target 'TDAdsSDKDemo' do
-  pod 'TDAdsBase',   ver
-  pod 'TDAdsSDK',    ver
-  # 适配器 1.1.2.15，核心仍用上面的 ver
-  pod 'TDAdsJDSDK',  '1.1.2.15'
-  pod 'TDAdsAdGain', '1.1.2.15'
-  pod 'TDAdsLtmb',   '1.1.2.15'
+  pod 'TDAdsBase', '1.1.2.13'
+  pod 'TDAdsSDK', '1.1.2.13'
+  pod 'TDAdsJDSDK', '1.1.2.15'
+  pod 'TDAdsAdGain', '1.1.2.17'
+  pod 'TDAdsLtmb', '1.1.2.17'
+  pod 'LitemobAd', '1.7.8'
 end

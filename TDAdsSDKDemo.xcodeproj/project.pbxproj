@@ -18,13 +18,11 @@
 		A1ADGAINLINK0000000001 /* AdGainSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1ADGAINXCFW0000000001 /* AdGainSDK.xcframework */; };
 		A1CHK000000000000000001 /* DemoIntegrationCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CHK000000000000000003 /* DemoIntegrationCheck.m */; };
 		A1FMT000000000000000001 /* FormatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FMT000000000000000003 /* FormatViewController.m */; };
-		E8B91A2C4D5F60718293A4D1 /* DemoNativeAssemble.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B91A2C4D5F60718293A4D3 /* DemoNativeAssemble.m */; };
 		A1JINDAIBUNDLE00000001 /* JinDaiSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A1JINDAIBUNDLE00000002 /* JinDaiSDK.bundle */; };
 		A1JINDAILINK0000000001 /* JinDaiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1JINDAIFW000000000001 /* JinDaiSDK.framework */; };
-		A1LITEMOBEMBED000000001 /* LitemobSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A1LITEMOBXCFW0000000001 /* LitemobSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A1LITEMOBLINK0000000001 /* LitemobSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1LITEMOBXCFW0000000001 /* LitemobSDK.xcframework */; };
 		A1SWIFT0000000000000001 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1SWIFT0000000000000002 /* Dummy.swift */; };
-		D2C98752A077887315F69D47 /* TDAdsSDKDemo/TDAdsSDKDemo/DemoPrivacy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACFBB35EB07500C610CB10B /* TDAdsSDKDemo/TDAdsSDKDemo/DemoPrivacy.m */; };
+		D2C98752A077887315F69D47 /* DemoPrivacy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACFBB35EB07500C610CB10B /* DemoPrivacy.m */; };
+		E8B91A2C4D5F60718293A4D1 /* DemoNativeAssemble.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B91A2C4D5F60718293A4D3 /* DemoNativeAssemble.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,7 +32,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A1LITEMOBEMBED000000001 /* LitemobSDK.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,19 +42,16 @@
 		1E7DE2221A0B9448361AC3D9 /* AdConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdConfig.h; sourceTree = "<group>"; };
 		89ED64CC9E9B27AA9496C3C3 /* Pods-TDAdsSDKDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDAdsSDKDemo.release.xcconfig"; path = "Target Support Files/Pods-TDAdsSDKDemo/Pods-TDAdsSDKDemo.release.xcconfig"; sourceTree = "<group>"; };
 		983ADAB89438F4434994AF4B /* Pods-TDAdsSDKDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDAdsSDKDemo.debug.xcconfig"; path = "Target Support Files/Pods-TDAdsSDKDemo/Pods-TDAdsSDKDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		9ACFBB35EB07500C610CB10B /* TDAdsSDKDemo/TDAdsSDKDemo/DemoPrivacy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDAdsSDKDemo/TDAdsSDKDemo/DemoPrivacy.m; sourceTree = SOURCE_ROOT; };
-		9C1A15C062B21BC9A7C088E5 /* TDAdsSDKDemo/TDAdsSDKDemo/DemoPrivacy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDAdsSDKDemo/TDAdsSDKDemo/DemoPrivacy.h; sourceTree = SOURCE_ROOT; };
+		9ACFBB35EB07500C610CB10B /* DemoPrivacy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDAdsSDKDemo/TDAdsSDKDemo/DemoPrivacy.m; sourceTree = SOURCE_ROOT; };
+		9C1A15C062B21BC9A7C088E5 /* DemoPrivacy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDAdsSDKDemo/TDAdsSDKDemo/DemoPrivacy.h; sourceTree = SOURCE_ROOT; };
 		A1ADGAINBUNDLE00000002 /* AdGainSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdGainSDK.bundle; path = "ThirdParty/AdGainSDK-current/AdGainSDK.bundle"; sourceTree = SOURCE_ROOT; };
 		A1ADGAINXCFW0000000001 /* AdGainSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AdGainSDK.xcframework; path = "ThirdParty/AdGainSDK-current/AdGainSDK.xcframework"; sourceTree = SOURCE_ROOT; };
 		A1CHK000000000000000002 /* DemoIntegrationCheck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoIntegrationCheck.h; sourceTree = "<group>"; };
 		A1CHK000000000000000003 /* DemoIntegrationCheck.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoIntegrationCheck.m; sourceTree = "<group>"; };
 		A1FMT000000000000000002 /* FormatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FormatViewController.h; sourceTree = "<group>"; };
 		A1FMT000000000000000003 /* FormatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FormatViewController.m; sourceTree = "<group>"; };
-		E8B91A2C4D5F60718293A4D2 /* DemoNativeAssemble.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoNativeAssemble.h; sourceTree = "<group>"; };
-		E8B91A2C4D5F60718293A4D3 /* DemoNativeAssemble.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoNativeAssemble.m; sourceTree = "<group>"; };
 		A1JINDAIBUNDLE00000002 /* JinDaiSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = JinDaiSDK.bundle; path = "ThirdParty/JinDaiSDK-current/JinDaiSDK.bundle"; sourceTree = SOURCE_ROOT; };
 		A1JINDAIFW000000000001 /* JinDaiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JinDaiSDK.framework; path = "ThirdParty/JinDaiSDK-current/JinDaiSDK.framework"; sourceTree = SOURCE_ROOT; };
-		A1LITEMOBXCFW0000000001 /* LitemobSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = LitemobSDK.xcframework; path = "ThirdParty/LitemobSDK-current/LitemobSDK.xcframework"; sourceTree = SOURCE_ROOT; };
 		A1SWIFT0000000000000002 /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
 		B10000000000000000000000 /* TDAdsSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDAdsSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B10000000000000000000001 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -70,6 +64,8 @@
 		B10000000000000000000021 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B10000000000000000000022 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		DAD1269E7E520253F1F3C440 /* Pods_TDAdsSDKDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TDAdsSDKDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8B91A2C4D5F60718293A4D2 /* DemoNativeAssemble.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoNativeAssemble.h; sourceTree = "<group>"; };
+		E8B91A2C4D5F60718293A4D3 /* DemoNativeAssemble.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoNativeAssemble.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +73,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1LITEMOBLINK0000000001 /* LitemobSDK.xcframework in Frameworks */,
 				A1ADGAINLINK0000000001 /* AdGainSDK.xcframework in Frameworks */,
 				A1JINDAILINK0000000001 /* JinDaiSDK.framework in Frameworks */,
 				A10000000000000000000020 /* UIKit.framework in Frameworks */,
@@ -102,14 +97,14 @@
 		D10000000000000000000001 = {
 			isa = PBXGroup;
 			children = (
-				D10000000000000000000002 /* TDAdsSDKDemo/TDAdsSDKDemo */,
+				D10000000000000000000002 /* TDAdsSDKDemo */,
 				D10000000000000000000003 /* Frameworks */,
 				D10000000000000000000004 /* Products */,
 				5BD34C6C2EA1E499709C41DE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
-		D10000000000000000000002 /* TDAdsSDKDemo/TDAdsSDKDemo */ = {
+		D10000000000000000000002 /* TDAdsSDKDemo */ = {
 			isa = PBXGroup;
 			children = (
 				B10000000000000000000005 /* AppDelegate.h */,
@@ -124,8 +119,8 @@
 				E8B91A2C4D5F60718293A4D2 /* DemoNativeAssemble.h */,
 				E8B91A2C4D5F60718293A4D3 /* DemoNativeAssemble.m */,
 				B10000000000000000000002 /* MainViewController.m */,
-				9ACFBB35EB07500C610CB10B /* TDAdsSDKDemo/TDAdsSDKDemo/DemoPrivacy.m */,
-				9C1A15C062B21BC9A7C088E5 /* TDAdsSDKDemo/TDAdsSDKDemo/DemoPrivacy.h */,
+				9ACFBB35EB07500C610CB10B /* DemoPrivacy.m */,
+				9C1A15C062B21BC9A7C088E5 /* DemoPrivacy.h */,
 				B10000000000000000000004 /* main.m */,
 				B10000000000000000000008 /* Info.plist */,
 			);
@@ -135,7 +130,6 @@
 		D10000000000000000000003 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A1LITEMOBXCFW0000000001 /* LitemobSDK.xcframework */,
 				A1ADGAINXCFW0000000001 /* AdGainSDK.xcframework */,
 				A1ADGAINBUNDLE00000002 /* AdGainSDK.bundle */,
 				A1JINDAIFW000000000001 /* JinDaiSDK.framework */,
@@ -168,6 +162,7 @@
 				C10000000000000000000001 /* Frameworks */,
 				C10000000000000000000003 /* Resources */,
 				A1LITEMOBCOPY0000000001 /* Embed Frameworks */,
+				CE286299251A2F0D79C61420 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,6 +213,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		CE286299251A2F0D79C61420 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TDAdsSDKDemo/Pods-TDAdsSDKDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TDAdsSDKDemo/Pods-TDAdsSDKDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TDAdsSDKDemo/Pods-TDAdsSDKDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DB5F69FDEB9F478CAE8E5239 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -247,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2C98752A077887315F69D47 /* TDAdsSDKDemo/TDAdsSDKDemo/DemoPrivacy.m in Sources */,
+				D2C98752A077887315F69D47 /* DemoPrivacy.m in Sources */,
 				A10000000000000000000001 /* AppDelegate.m in Sources */,
 				A10000000000000000000002 /* MainViewController.m in Sources */,
 				A1CHK000000000000000001 /* DemoIntegrationCheck.m in Sources */,
@@ -296,7 +308,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 983ADAB89438F4434994AF4B /* Pods-TDAdsSDKDemo.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ARCHS = arm64;
 				CODE_SIGNING_ALLOWED = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,7 +316,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ThirdParty/AdGainSDK-current",
-					"$(PROJECT_DIR)/ThirdParty/LitemobSDK-current",
 					"$(PROJECT_DIR)/ThirdParty/JinDaiSDK-current",
 				);
 				HEADER_SEARCH_PATHS = (
@@ -330,8 +341,6 @@
 					"-lxml2",
 					"-lbz2",
 					"-liconv",
-					"-framework",
-					LitemobSDK,
 					"-framework",
 					JinDaiSDK,
 				);
@@ -347,7 +356,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89ED64CC9E9B27AA9496C3C3 /* Pods-TDAdsSDKDemo.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ARCHS = arm64;
 				CODE_SIGNING_ALLOWED = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -355,7 +364,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ThirdParty/AdGainSDK-current",
-					"$(PROJECT_DIR)/ThirdParty/LitemobSDK-current",
 					"$(PROJECT_DIR)/ThirdParty/JinDaiSDK-current",
 				);
 				HEADER_SEARCH_PATHS = (
@@ -381,8 +389,6 @@
 					"-lxml2",
 					"-lbz2",
 					"-liconv",
-					"-framework",
-					LitemobSDK,
 					"-framework",
 					JinDaiSDK,
 				);
