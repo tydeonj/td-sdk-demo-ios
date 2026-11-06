@@ -4,7 +4,7 @@
 文档仓库：https://github.com/tydeonj/td-sdk-docs  
 Android Demo：https://github.com/tydeonj/td-sdk-demo-android  
 
-正式工程走 CocoaPods Trunk：`pod 'TDAdsSDK', '1.1.2.13'`（二进制在 Gitee）。本 Demo 核心与京东为已发布版本，AdGain 与 LiteMob 桥为 `1.1.2.17`，LiteMob 官方库为 `LitemobAd` `1.7.8`。三步速查：[接入指南.md](接入指南.md)
+正式工程走 CocoaPods Trunk：`pod 'TDAdsSDK', '1.1.2.13'`（二进制在 Gitee）。本 Demo 核心与京东为已发布版本，AdGain 与 LiteMob 桥为 `1.1.2.17`，LiteMob 官方库为 `LitemobAd` `1.7.9`。三步速查：[接入指南.md](接入指南.md)
 
 ```bash
 pod install

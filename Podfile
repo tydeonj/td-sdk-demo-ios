@@ -7,5 +7,5 @@ target 'TDAdsSDKDemo' do
   pod 'TDAdsJDSDK', '1.1.2.15'
   pod 'TDAdsAdGain', '1.1.2.17'
   pod 'TDAdsLtmb', '1.1.2.17'
-  pod 'LitemobAd', '1.7.8'
+  pod 'LitemobAd', '1.7.9'
 end
